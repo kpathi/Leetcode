@@ -27,36 +27,20 @@ Return:
 
 class Solution {
     public List<String> fizzBuzz(int n) {
-         List<String> fb = new ArrayList<>();
-        String c= new String();
+       List<String> ls= new ArrayList<>();
+        String s= new String();
         for(int i=1; i<=n; i++){
+            if(i%3==0 && i%5==0)
+                s= "FizzBuzz";
+            else if(i%3==0)
+                s= "Fizz";
+                else if(i%5==0)
+                    s="Buzz";
+            else s= String.valueOf(i);              
             
-			if(i%3==0 && i%5==0){
-				
-                 c =  "FizzBuzz"; 
-                
-                
-			}
-			else if (i%5==0){
-				c =  "Buzz"; 
-                
-                
-
-			}
-			else if (i%3==0){
-				 c =  "Fizz"; 
-               
-            
-			}
-			else{
-		
-                 c = String.valueOf(i);
-            }
-		fb.add(c);
-            
-			
-
-	
-	} return fb;
+            ls.add(s);
+            } 
+        return ls;
+        
     } 
 }
