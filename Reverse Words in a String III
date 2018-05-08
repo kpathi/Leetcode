@@ -1,0 +1,38 @@
+Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
+
+Example 1:
+Input: "Let's take LeetCode contest"
+Output: "s'teL ekat edoCteeL tsetnoc"
+
+Note: In the string, each word is separated by single space and there will not be any extra space in the string.
+
+//Program
+
+class Solution {
+    public String reverseWords(String s) {
+    String[] x = s.split(" ");
+        for (int i=0; i<x.length; ++i){
+            x[i]= reverse(x[i]);
+        }
+        
+         StringBuilder sb=new StringBuilder();
+        sb.append(x[0]);
+         for (int i=1; i<x.length; ++i){
+             sb.append(' ');
+             sb.append(x[i]);
+         } 
+        return sb.toString();
+    }
+        
+        String reverse (String x)
+        { 
+            char[] y= x.toCharArray();           
+        for(int i=0;i<(y.length)/2; ++i)
+        {
+            char z= y[i];
+            y[i]=y[(y.length)-1-i];
+            y[(y.length)-1-i]=z;
+        }
+            return String.valueOf(y);               
+    }
+}
