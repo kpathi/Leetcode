@@ -21,10 +21,6 @@ class Solution {
             
         }
         char[] r= ransomNote.toCharArray();
-       /* if(r.length==2 && c.length==2){
-            if(ransomNote.charAt(1)!=magazine.charAt(1))
-                return false;
-        }*/
         
         for(int j=0;j<r.length;j++){
             if(map.containsValue(r[j])){
