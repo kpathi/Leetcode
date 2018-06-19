@@ -24,24 +24,21 @@ Could you do this in one pass?
  */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        int count=1;
-        ListNode p= head;
-        if(p.next==null && n==1){
-            return p.next;
-        }
+        if(head.next==null && n==1) return null;
+        ListNode p=head;
+        int size=1;
         while(p.next!=null){
             p=p.next;
-        count=count+1;
-           //return count;
-        }
-        count=count-n;
-       if(count==0){
-           return head.next;
-       }
+            size++;
+        } 
+        int x=size-n;       
+        if(x==0) return head.next;
         p=head;
-        for(int i=1; i<count; i++){
-            p=p.next;
+        int start=1;
         
+        while(start<x){    
+            p=p.next; 
+            start++;
         }
         p.next=p.next.next;
         return head;
