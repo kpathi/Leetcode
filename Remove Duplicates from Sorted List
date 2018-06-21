@@ -19,19 +19,15 @@ Output: 1->2->3
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
-      ListNode x = head;
-        ListNode y= head;
+      if(head==null) return null;
+        if(head.next==null) return head;
+      ListNode p = head;
         
-       while(x!=null){
-              if(x.next!=null && y.val==x.next.val){
-                  x.next=x.next.next;                  
-              }   
-        else {
-            x=x.next;
-        }
-           y=x;      
-       }
-        return head;
+        while(p.next!=null && p!=null){
+            if(p.val==p.next.val)
+                p.next=p.next.next;       
+        else p=p.next;
+        } return head;
         
     } 
 }
