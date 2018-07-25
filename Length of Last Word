@@ -20,11 +20,10 @@ class Solution {
     
         int size=0;
         for(int i=len-1;i>=0;i--){
-            size++;
             if(c[i]==' '){
-                return size-1;
+                return size;
             }
-            
+            size++;
         }
         
             return size;
