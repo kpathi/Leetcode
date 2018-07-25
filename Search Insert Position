@@ -30,14 +30,13 @@ class Solution {
                 return i;
             }
             else {
-                
-                if(target==nums[i]-1){
+                if(target<nums[i]){
                     return i;
                 }
-                if(target==nums[i]+1){
-                    return i+1;
-                    
+                if(target>nums[i] && i==nums.length-1){
+                    return nums.length;
                 }
+                
             }
         }
         return i;
