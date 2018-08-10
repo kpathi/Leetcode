@@ -21,14 +21,8 @@ class Solution {
                 map.put(n,sum);
                  map.put(n-left,sum);
                 map.put(n+right,sum);
-                 res= Math.max(res, sum);
-      
-                
-            }
-        
-        }
-            
-        
+                 res= Math.max(res, sum);        
+       } }       
         return res;
     }
 }
