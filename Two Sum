@@ -18,17 +18,17 @@ class Solution {
         for(int i=0; i<nums.length; i++){
              
             int d=target-nums[i];
-            if(!map.containsKey(d)){
-                map.put(nums[i],i); 
-            }
-            else {
+            if(map.containsKey(d)){
                 r[0]=map.get(d);
-                r[1]=i;
-            return r;
+                r[1]=i; 
+                return r;
             }
+            else 
+                map.put(nums[i],i);                      
         
         } return r;
-               
+        
+        
     } 
    
 }
