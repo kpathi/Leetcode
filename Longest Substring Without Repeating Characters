@@ -1,0 +1,47 @@
+Given a string, find the length of the longest substring without repeating characters.
+
+Example 1:
+
+Input: "abcabcbb"
+Output: 3 
+Explanation: The answer is "abc", with the length of 3. 
+Example 2:
+
+Input: "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
+
+Input: "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3. 
+             Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode res = new ListNode(0);
+        ListNode p=res;
+        int x,y,carry=0;
+      while(l1!=null || l2!=null){
+         x= (l1==null)?0: l1.val;
+         y= (l2==null)?0: l2.val;
+          int sum= x+y+carry;
+          carry=sum/10;
+          p.next=new ListNode(sum%10);
+          p=p.next;
+          l1=(l1!=null)?l1.next:null;
+          l2=(l2!=null)?l2.next:null;
+      }
+        if(carry>0) p.next= new ListNode(carry);
+        return res.next;
+    }
+}
